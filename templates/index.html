@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mobile Price Classification</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 20px;
+            background-image: url("/static/1.jpg");
+            background-size: cover;
+        }
+        
+        h1 {
+            font-size: 70px;
+            text-align: center;
+            color: rgb(95, 177, 186);
+            text-shadow: 2px 2px 5px red;
+            font-family: "Times New Roman", Times, serif;
+        }
+        
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: black; /* Set background color of the form to black */
+            padding: 20px; /* Add padding for spacing */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            color: white; /* Set text color to white */
+        }
+        
+        label {
+            /* display: block; */
+            margin-bottom: 5px;
+            color: white; /* Set text color to white */
+            text-shadow: 2px 2px 5px rgb(119, 119, 113);
+            font-size: 20px;
+            font-family: "Times New Roman", Times, serif;
+            padding: 10px 0; /* Adjust padding for better alignment */
+            display: inline-block;
+            width: 50%; /* Set width to control label width */
+        }
+        
+        input[type="number"] {
+            width: 45%; /* Set width to control input field width */
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+        
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: 2px solid;
+            cursor: pointer;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 4px;
+        }
+        
+        h4 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+            color: white; /* Set text color to white */
+        }
+
+        nav {
+            background-color: transparent; /* Set background color of the entire nav bar to transparent */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 10px 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white; /* Set text color to white */
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            padding: 10px 20px;
+            background-color: blue; /* Set background color of the links to blue */
+            border-radius: 5px; /* Optional: Add some border radius for rounded corners */
+        }
+
+        nav ul li a:hover {
+            background-color: lightblue; /* Change background color on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1><i><b style="color: blue;">Mobile Price Classification</b></i></h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <form method="POST" action="/home">
+        <label for="battery_power"><b>Battery Power(mAh):&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="battery_power" name="battery_power" required><br>
+
+        <label for="clock_speed"><b>Clock Speed:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" step="any" id="clock_speed" name="clock_speed" required><br>
+
+        <label for="fc"><b>Front Camera Megapixels:&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="fc" name="fc" required><br>
+
+        <label for="four_g"><b>5G Support (0 for No, 1 for Yes):&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="four_g" name="four_g" required><br>
+
+        <label for="int_memory"><b>Internal Memory (GB):&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="int_memory" name="int_memory" required><br>
+
+        <label for="n_cores"><b>Number of Cores(1 to 8):&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="n_cores" name="n_cores" required><br>
+
+        <label for="pc"><b>Primary Camera Megapixels(1 to 20):</b></label>
+        <input type="number" id="pc" name="pc" required><br>
+
+        <label for="px_height"><b>Pixel Height(upto 2000):&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="px_height" name="px_height" required><br>
+
+        <label for="px_width"><b>Pixel Width(upto 2000):&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="px_width" name="px_width" required><br>
+
+        <label for="ram"><b>RAM (MB):&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</b></label>
+        <input type="number" id="ram" name="ram"required><br>
+
+        <button type="submit"><b><i>Prediction</i></b></button>
+    </form>
+    <h4 align="center"><b>{{pred}}</b></h4>
+    
+
+</body>
+</html>
